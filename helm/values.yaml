@@ -6,7 +6,7 @@ replicaCount: 3
 image:
   repository: nginx
   tag: alpine
-  pullPolicy: IfNotRresent
+  pullPolicy: IfNotPresent
 
 resources:
   requests: 
