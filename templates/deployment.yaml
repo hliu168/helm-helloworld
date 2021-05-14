@@ -27,3 +27,5 @@ spec:
       - image: {{ .Values.image.repolitory }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: {{ .Values.image.repolitory }}-{{ .Values.image.tag }}
+        resources:
+{{ toYaml .Values.resources | indent 12 }}
