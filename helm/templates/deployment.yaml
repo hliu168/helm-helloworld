@@ -2,15 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: {{ .Values.image.repolitory }}
+    app: {{ .Values.image.repository }}
     tag: {{ .Values.image.tag }}
-  name: {{ .Values.image.repolitory }}-{{ .Values.image.tag }}
+  name: {{ .Values.image.repository }}-{{ .Values.image.tag }}
   namespace: {{ .Values.namespace.name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Values.image.repolitory }}
+      app: {{ .Values.image.repository }}
       tag: {{ .Values.image.tag }}
   strategy:
     rollingUpdate:
@@ -20,12 +20,12 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Values.image.repolitory }}
+        app: {{ .Values.image.repository }}
         tag: {{ .Values.image.tag }}
     spec:
       containers:
-      - image: {{ .Values.image.repolitory }}:{{ .Values.image.tag }}
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
-        name: {{ .Values.image.repolitory }}-{{ .Values.image.tag }}
+        name: {{ .Values.image.repository }}-{{ .Values.image.tag }}
         resources:
 {{ toYaml .Values.resources | indent 12 }}
