@@ -9,7 +9,7 @@ image:
   pullPolicy: IfNotRresent
 
 resources:
-  request: 
+  requests: 
     cpu: 50m
     memory: 256Mi
 
