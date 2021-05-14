@@ -26,6 +26,6 @@ spec:
       containers:
       - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
-        name: {{ .Values.image.repository }}-{{ .Values.image.tag }}
+        name: {{ .Values.image.repository }}
         resources:
 {{ toYaml .Values.resources | indent 12 }}
