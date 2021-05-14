@@ -12,6 +12,6 @@ spec:
     protocol: TCP
     targetPort: {{ .Values.service.port }}
   selector:
-    app: {{ .Values.image.repolitory }}
+    app: {{ .Values.image.repository }}
     tag: {{ .Values.image.tag }}
   type: {{ .Values.service.type }}
